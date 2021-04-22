@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { MaterialService } from 'src/app/services/material.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     aSub: Subscription
 
 
-    constructor(private auth: AuthService, private router:Router, private route:ActivatedRoute) {}
+    constructor(private auth: AuthService, private router:Router, private route:ActivatedRoute,  public notificationService: NotificationService) {}
 
     ngOnInit() {
         this.form = new FormGroup({
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.aSub = this.auth.login(this.form.value).subscribe(
             () => this.router.navigate(['/']),
             error => {
-              MaterialService.toast(error.error.message)
+                this.notificationService.error(error);
               this.form.enable()
             }
         )
