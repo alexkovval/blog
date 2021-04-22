@@ -39,9 +39,6 @@ export class NotificationService {
         if (errorObject.status === 400) {
             return "Incorrect input, please try again.";
         }
-        if (errorObject.status === 404) {
-            return "The email is incorrect. Please try another.";
-        }
         if (errorObject.status === 409) {
             return "This email is in use yet.";
         }
