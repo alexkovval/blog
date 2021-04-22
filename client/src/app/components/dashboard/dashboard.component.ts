@@ -45,6 +45,7 @@ export class DashboardComponent implements OnInit {
                 console.log(post)
                 MaterialService.toast('Changes are saved')
                 this.form.enable()
+                this.router.navigateByUrl('/home')
             },
             error => {
                 console.log(error.error.message)
