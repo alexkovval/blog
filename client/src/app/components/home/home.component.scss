@@ -12,13 +12,15 @@
     margin-bottom: 2rem;
 }
 
-img {
+.photo {
     text-align: center;
     position: absolute;
     width: 100%;
     margin: -10% 0 0 0;
 }
-
+.img{
+    max-width: 100%;
+}
 .card-body {
     margin-top: -1.5rem;
 }
