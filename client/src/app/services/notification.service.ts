@@ -33,9 +33,6 @@ export class NotificationService {
             }
         }
     
-        if (errorObject.status === 401 || errorObject.status === 403) {
-            return "You are not authorized.";
-        }
     
         if (errorObject.status === 400) {
             return "Incorrect input, please try again.";
