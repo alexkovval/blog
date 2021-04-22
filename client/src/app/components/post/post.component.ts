@@ -22,7 +22,7 @@ export class PostComponent implements OnInit {
     ) { }
   
     ngOnInit(): void {
-        this.email = JSON.parse(localStorage.getItem("user")).email
+        this.email = localStorage.getItem("user-email")
       this.post$ = this.route.params
       .pipe(switchMap( (params : Params) => {
         return this.postService.getById(params['id'])
