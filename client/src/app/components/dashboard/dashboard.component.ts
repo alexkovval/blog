@@ -43,8 +43,7 @@ export class DashboardComponent implements OnInit {
         .subscribe(
             post => {
                 console.log(post)
-                MaterialService.toast('Changes are saved')
-                this.form.enable()
+                alert('Changes are saved')
                 this.router.navigateByUrl('/home')
             },
             error => {
